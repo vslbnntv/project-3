@@ -1,0 +1,20 @@
+.leftinput{
+    margin-left: 50px;
+}
+input{
+    margin-left: 200px;
+}
+.favorites{
+}
+.rfavorites{
+    margin-left: 200px;
+    background-color: cadetblue;
+    border-radius: 20px;
+}
+.savebtn{
+    margin-left: 290px;
+    margin-top: 15px;
+}
+.delete{
+    margin-left: 50px;
+}

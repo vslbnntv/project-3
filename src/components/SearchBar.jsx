@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import styles from './searchBar.module.css';
 
 const SearchBar = ({ onSubmit }) => {
 
@@ -18,8 +19,8 @@ const SearchBar = ({ onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input name='search' type='search' required />
-      <button type='submit'>Search</button>
+      <input className={styles.src} name='search' type='search' required />
+      <button className={styles.btn} type='submit'>Search</button>
     </form>
   )
 };

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { api } from '../api';
 import { removeFav, saveFavs, selectFavorites, selectSavedId } from '../features/favorites/favoriteSlice';
+import styles from './favorites.module.css';
 
 const Favorites = () => {
   const [title, setTitle] = useState('');
@@ -19,18 +20,18 @@ const Favorites = () => {
   }
 
   return (
-    <div>
+    <div className={styles.favorites}>
       <input placeholder='Title' value={title} onChange={e => setTitle(e.target.value)}/>
       {favorites.map(f => {
         return (
-          <div key={f.imdbID}>
+          <div className={styles.rfavorites} key={f.imdbID}>
             <p>{f.Title}</p>
-            <button disabled={savedId} onClick={e => dispatch(removeFav(f.imdbID))}>X</button>
+            <button className={styles.delete} disabled={savedId} onClick={e => dispatch(removeFav(f.imdbID))}>X</button>
           </div>
         )
       })}
       {!savedId
-        ? <button disabled={!title} onClick={handleSave}>Save</button>
+        ? <button className={styles.savebtn} disabled={!title} onClick={handleSave}>Save</button>
         : <Link to={`/saved-favorite/${savedId}`} >Go to saved</Link>}
 
     </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { api } from '../api';
 import MoviesList from './MoviesList'
 import SearchBar from './SearchBar'
+import styles from './movies.module.css';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -18,7 +19,7 @@ const Movies = () => {
   }
 
   return (
-    <div>
+    <div >
       <SearchBar onSubmit={handleSearch} />
       <MoviesList movies={movies} />
     </div>
